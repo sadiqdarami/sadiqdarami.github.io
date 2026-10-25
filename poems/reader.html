@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="قراءة نصوص شعرية محمد صادق درامي" />
+    <title>قراءة القصائد | محمد صادق درامي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #f8f5f1;
+        --panel: #fffdfb;
+        --ink: #1f1b1a;
+        --muted: #6b5d58;
+        --accent: #3d2b25;
+        --soft: #f1e9e4;
+        --line: rgba(61, 43, 37, 0.14);
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: 'Cairo', sans-serif;
+      }
+
+      .page {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 48px 20px 80px;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+      }
+
+      .topbar h1 {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 2.9rem);
+      }
+
+      .home-btn {
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 18px;
+        border-radius: 999px;
+        font-weight: 700;
+        display: inline-block;
+      }
+
+      .poem-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 28px 22px;
+        box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+      }
+
+      .poem-meta {
+        display: inline-block;
+        color: var(--muted);
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 8px;
+        margin-bottom: 18px;
+        font-size: 1rem;
+      }
+
+      .poem-body {
+        font-family: 'Amiri', serif;
+        font-size: clamp(1.5rem, 2vw, 2.2rem);
+        line-height: 2.1;
+        text-align: center;
+        white-space: pre-line;
+        direction: rtl;
+      }
+
+      @media (max-width: 640px) {
+        .page { padding-top: 30px; }
+        .poem-card { padding: 20px 14px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="topbar">
+        <h1 id="title">القصيدة</h1>
+        <a class="home-btn" href="../index.html">العودة للرئيسية</a>
+      </div>
+
+      <article class="poem-card">
+        <div id="meta" class="poem-meta">محمد صادق درامي</div>
+        <div id="poem" class="poem-body"></div>
+      </article>
+    </div>
+
+    <script>
+      const poems = {
+        "ارجوزة محمد صادق": {
+          title: "ارجوزة محمد صادق",
+          meta: "محمد صادق درامي • شعر",
+          text: `قال محمد من أهل لاتر كندا بعيد الدار والمعاشر
+ابن سمي الهاشمي الطاهر ابن محمد الامين التاجر
+نجل الإمام الالمعي الشاعر الغجغي العالم المهاجر
+الحمد لله العلي القادر السيد المولى الولي الشاكر
+صلى على طه الامين الظافر واله وصحبه الاكابر
+الصادق الامين خير آمر وخير من نهى وخير صابر
+فهذه ارجوزة مسافر قدمتها من اوثق المصادر
+اودعتها ابيات فكر ثائر لغتها أسلوب شعر ناضر
+كتبتها لم استجب لعابر من الحنين أو هوى مساور
+وربما سردتها بوافر الحيطة من تمايل المحاور
+لشرر كالقصر في تطاير بقلب ميمون الهوى والطائر
+أول ما سطرت في الدفاتر مستسلما لكثرة الخواطر
+فوق ثلوج مينسوتا طائري الميمون والمنحوس في تبادر
+فآمري الح في العناصر وزاجري يلح المحاور
+فانتابني السرور لاواصري بغمبيا أرض بها عشائري
+قوم ب سير كندا كمب لاتر كندا التي صارت من الحواضر
+اكرم بها من مولد في ظاهر وباطن بالخير جد زاخر`
+        },
+        "العلم": {
+          title: "العلم",
+          meta: "محمد صادق درامي • شعر",
+          text: `اسروا القول أو قولوه جهرا
+فان (النت) لم يستثن سرا
+فقد فتحوه فانتشر انتشارا
+بسلطان وصار الناس أسرى
+صار ضرورة في كل بيت لما
+سحروا بطول مداه سحرا
+وصارت عالة كل البرايا
+على الجوال بالتغريد قسرا
+بنقر المحتوى في كل أمر
+ولو كانت نتيجته اضرا
+يعز به اناس ثم ينسى
+بعزة غيرهم من عز فورا
+ويهوي بعد عزتهم اناس
+تواصوا بينهم بالفور طورا`
+        },
+        "الولي": {
+          title: "الولي",
+          meta: "محمد صادق درامي • شعر",
+          text: `غفر الله للولي المرائي
+كم تردى بسمعة ورياء
+وافتتان بقدره والاماني
+فتنة لا تليق بالاولياء
+في جبين المساء شيء يحيي
+بعد خلف المنى ووعد الرجاء
+طاف بالطيش همه فتمنى
+عند نبض الهوى وبشر الهناء
+وانشراح الصدور شيئا بجو
+وانتشار الهوى وشم الهواء
+بينما يزحف الغرور كجيش
+لانفجار الغلو عبر الفضاء
+ما اعتقاد الولي إلا شعور
+فوق سيل الزبى وفوق الغثاء`
+        },
+        "والصبر ضياء": {
+          title: "والصبر ضياء",
+          meta: "محمد صادق درامي • شعر",
+          text: `إن للصبر رجالا واصلوا الصبر وصالا
+صبروا صبرا جميلا ظنه الناس محالا
+خلدوا الصبر خلودا إنهم كانوا جبالا
+لم يميلوا عنه ميلا لا يمينا أو شمالا
+إنما الصبر وسام زاده الحسن جمالا
+ليس شيء كجزاء الصبر بشرى واحتفالا
+لا يداني بجزاء قدر من ذل امتثالا
+إن في الصبر ضياء نوره الرحب تلالا
+إن في الصبر سماحا ليس سخطا وخبالا
+انما الصبر اصطبار ليس مكرا واحتيالا
+كان ايوب صبورا صبره امتاز جلالا
+كان في الصبر بعيداً بعده ليس ضلالا`
+        },
+        "القرآن حجة لك أو عليك": {
+          title: "القرآن حجة لك أو عليك",
+          meta: "محمد صادق درامي • شعر",
+          text: `قراءة لكتابي ليست ككل كتاب
+إن الذين تنادوا جهودهم في تباب
+تجاوب الغرب جهرا تحديا للكتاب
+تغريدة كرصاص كم ارقت بانصباب
+كم مهدت لمقال تمهيدها بالسباب
+كم موقف لسؤال لم يفتخر بجواب
+وما كان لغواً سيبقى لغواً
+كنبح كلاب
+هذا الكتاب تجلى يفري بكل خطاب
+كأنه في انقضاض على العدو بناب
+في صرعة قد علاه مجندلا في التراب
+بحر خضم المعاني ما كان ضحل حباب
+ما كان سفرا معدا يأتي بفصل وباب
+ما كان شعرا معادا بحوره من عباب`
+        },
+        "محمد صادق درامي": {
+          title: "محمد صادق درامي",
+          meta: "محمد صادق درامي • شاعر وكاتب",
+          text: `أهلاً بكم في الأرشيف الرقمي
+المخصص لحفظ وتوثيق أعمال الشاعر
+محمد صادق درامي
+يضم هذا الموقع منظوماته الشعرية
+ومقالاته الفكرية الأدبية
+ويحاول أن يفتح باب القراءة
+بسهولة ووضوح، ليصل النص إلى القارئ
+بشكل هادئ ومريح.`
+        }
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const poemKey = decodeURIComponent(params.get('poem') || 'العلم');
+      const poem = poems[poemKey] || poems['العلم'];
+
+      document.getElementById('title').textContent = poem.title;
+      document.getElementById('meta').textContent = poem.meta;
+      document.getElementById('poem').textContent = poem.text;
+    </script>
+  </body>
+</html>
