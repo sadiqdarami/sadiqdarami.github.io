@@ -1,467 +1,280 @@
-* {
-  box-sizing: border-box;
-}
-
-:root {
-  --bg: #120d0a;
-  --bg-soft: #1c1512;
-  --panel: rgba(255,255,255,0.03);
-  --card: rgba(18, 15, 12, 0.82);
-  --text: #f6ebdb;
-  --muted: #d8c8b0;
-  --primary: #d9b06d;
-  --secondary: #b87b4a;
-  --gold: #f4d99a;
-  --border: rgba(255,255,255,0.08);
-  --shadow: 0 20px 45px rgba(0,0,0,0.22);
-  --radius: 24px;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: "Cairo", sans-serif;
-  background:
-    radial-gradient(circle at top right, rgba(217,176,109,0.14), transparent 22%),
-    radial-gradient(circle at bottom left, rgba(184,123,74,0.12), transparent 25%),
-    linear-gradient(135deg, var(--bg), #1a1411 50%, #120d0a 100%);
-  color: var(--text);
-  line-height: 1.9;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-.container {
-  width: min(1120px, calc(100% - 32px));
-  margin: 0 auto;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(18, 13, 10, 0.7);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 76px;
-  gap: 18px;
-}
-
-.brand-wrap {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 800;
-}
-
-.brand-mark {
-  display: inline-grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #1a120b;
-  font-size: 1.2rem;
-}
-
-.brand-name {
-  font-size: 1.08rem;
-}
-
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  color: var(--muted);
-}
-
-.nav-links a {
-  transition: color 0.2s ease;
-}
-
-.nav-links a:hover,
-.nav-links a:focus-visible {
-  color: var(--text);
-}
-
-.hero {
-  padding: 96px 0 64px;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.3fr 0.9fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.kicker {
-  margin: 0 0 8px;
-  color: var(--gold);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-}
-
-.hero-copy h1 {
-  margin: 0;
-  font-size: clamp(2.5rem, 5vw, 4.8rem);
-  font-weight: 800;
-  line-height: 1.15;
-}
-
-.hero-copy h2 {
-  margin: 14px 0 18px;
-  font-size: clamp(1.18rem, 2vw, 1.9rem);
-  color: var(--muted);
-  font-weight: 600;
-}
-
-.lead {
-  max-width: 640px;
-  margin: 0;
-  color: var(--muted);
-  font-size: 1.08rem;
-}
-
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 28px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  padding: 0.9rem 1.5rem;
-  font-weight: 700;
-  border: 1px solid transparent;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  box-shadow: 0 18px 35px rgba(184,123,74,0.28);
-}
-
-.btn-secondary {
-  background: transparent;
-  border-color: var(--border);
-  color: var(--text);
-}
-
-.mini-links {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 0;
-  margin: 28px 0 0;
-}
-
-.mini-links a {
-  display: inline-block;
-  padding: 0.6rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.02);
-  color: var(--muted);
-}
-
-.hero-panel {
-  display: grid;
-  gap: 22px;
-}
-
-.profile-box {
-  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-  border: 1px solid var(--border);
-  border-radius: 28px;
-  padding: 28px 20px 20px;
-  box-shadow: var(--shadow);
-  text-align: center;
-}
-
-.avatar {
-  width: 188px;
-  height: 188px;
-  border-radius: 50%;
-  margin: 0 auto 22px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #150f0b;
-  font-weight: 800;
-  font-size: 4rem;
-  box-shadow: 0 0 0 12px rgba(217,176,109,0.12);
-}
-
-.status-tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  padding: 0.55rem 0.9rem;
-  color: var(--gold);
-  background: rgba(217,176,109,0.08);
-  border: 1px solid rgba(217,176,109,0.16);
-  font-weight: 700;
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.stat-item {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 18px 12px;
-  text-align: center;
-}
-
-.stat-item strong {
-  display: block;
-  font-size: 1.5rem;
-}
-
-.stat-item span {
-  color: var(--muted);
-  font-size: 0.8rem;
-}
-
-.section {
-  padding: 88px 0;
-}
-
-.section-alt {
-  background: rgba(255,255,255,0.02);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.section-heading {
-  margin-bottom: 32px;
-}
-
-.section-heading h3 {
-  margin: 0;
-  font-size: clamp(1.8rem, 3vw, 2.7rem);
-}
-
-.about-grid,
-.works-grid,
-.themes-grid {
-  display: grid;
-  gap: 22px;
-}
-
-.about-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.card,
-.work-card,
-.theme-card,
-.article-item,
-.cta-box {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-.card {
-  padding: 28px 24px;
-}
-
-.card p {
-  margin: 0;
-  color: var(--text);
-}
-
-.accent-card {
-  background: linear-gradient(135deg, rgba(217,176,109,0.08), rgba(184,123,74,0.06));
-}
-
-.works-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.work-card,
-.theme-card {
-  padding: 26px 22px;
-}
-
-.tag {
-  display: inline-block;
-  margin-bottom: 16px;
-  padding: 0.42rem 0.8rem;
-  border-radius: 999px;
-  background: rgba(184,123,74,0.12);
-  color: var(--gold);
-  border: 1px solid rgba(184,123,74,0.18);
-  font-size: 0.72rem;
-  font-weight: 700;
-}
-
-.work-card h4,
-.theme-card h4,
-.article-item h4 {
-  margin: 0 0 10px;
-  font-size: 1.4rem;
-}
-
-.work-card p,
-.theme-card p,
-.article-item p {
-  margin: 0;
-  color: var(--muted);
-}
-
-.themes-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.icon {
-  width: 52px;
-  height: 52px;
-  display: grid;
-  place-items: center;
-  border-radius: 14px;
-  background: rgba(217,176,109,0.1);
-  color: var(--gold);
-  font-weight: 800;
-  margin-bottom: 18px;
-}
-
-.articles-list {
-  display: grid;
-  gap: 18px;
-}
-
-.article-item {
-  display: grid;
-  grid-template-columns: 110px 1fr;
-  gap: 16px;
-  padding: 20px 22px;
-}
-
-.article-date {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 54px;
-  background: rgba(217,176,109,0.1);
-  border: 1px solid rgba(217,176,109,0.14);
-  border-radius: 14px;
-  color: var(--gold);
-  font-weight: 800;
-}
-
-.cta-section {
-  padding-bottom: 100px;
-}
-
-.cta-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 22px;
-  padding: 28px 24px;
-  background: linear-gradient(135deg, rgba(217,176,109,0.1), rgba(184,123,74,0.08));
-}
-
-.cta-box h3 {
-  margin: 0;
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-}
-
-.contact-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.contact-links a {
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.02);
-  border-radius: 999px;
-  padding: 0.75rem 1rem;
-  color: var(--muted);
-}
-
-.site-footer {
-  padding: 28px 0 42px;
-  color: var(--muted);
-  text-align: center;
-  border-top: 1px solid var(--border);
-}
-
-@media (max-width: 980px) {
-  .hero-grid,
-  .about-grid,
-  .works-grid,
-  .themes-grid,
-  .cta-box {
-    grid-template-columns: 1fr;
-    display: grid;
-  }
-
-  .nav {
-    flex-direction: column;
-    justify-content: center;
-    padding: 14px 0;
-  }
-}
-
-@media (max-width: 620px) {
-  .stats,
-  .works-grid,
-  .themes-grid,
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .article-item {
-    grid-template-columns: 1fr;
-  }
-
-  .nav-links {
-    justify-content: center;
-    gap: 10px 14px;
-    font-size: 0.92rem;
-  }
-
-  .hero {
-    padding-top: 72px;
-  }
-}
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="محمد صادق درامي | شاعر وكاتب في الدين والسياسة والاجتماع" />
+    <title>محمد صادق درامي | شاعر وكاتب</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <div class="brand-wrap">
+          <span class="brand-mark">م</span>
+          <span class="brand-name">محمد صادق درامي</span>
+        </div>
+        <nav class="nav-links" aria-label="التنقل">
+          <a href="#about">من أنا</a>
+          <a href="#works">أعمالي</a>
+          <a href="#poetry">الشعر</a>
+          <a href="#themes">المواضيع</a>
+          <a href="#articles">المقالات</a>
+          <a href="#contact">تواصل</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">شاعر وكاتب</p>
+            <h1>محمد صادق درامي</h1>
+            <h2>في الدين، السياسة، والمجتمع</h2>
+            <p class="lead">
+              أكتب من تجربة الحياة، ومن ذاكرة المكان والرحلة، وأحاول أن أقرأ الواقع
+              بالروح واللغة، وأن أستخرج من الوجع والمعنى ما يفتح باب الفهم.
+            </p>
+            <div class="actions">
+              <a class="btn btn-primary" href="#works">أعمالي</a>
+              <a class="btn btn-secondary" href="#contact">تواصل معي</a>
+            </div>
+            <ul class="mini-links" aria-label="روابط التواصل">
+              <li><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a></li>
+              <li><a href="https://x.com" target="_blank" rel="noreferrer">X</a></li>
+              <li><a href="mailto:sadiqdarami@gmail.com">Email</a></li>
+            </ul>
+          </div>
+
+          <div class="hero-panel">
+            <div class="profile-box">
+              <div class="avatar">م</div>
+              <div class="status-tag">أكتب من التجربة</div>
+            </div>
+
+            <div class="stats">
+              <div class="stat-item">
+                <strong>170</strong>
+                <span>بيتًا</span>
+              </div>
+              <div class="stat-item">
+                <strong>1</strong>
+                <span>سورة مرتلة</span>
+              </div>
+              <div class="stat-item">
+                <strong>∞</strong>
+                <span>حضور فكري</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="kicker">من أنا</p>
+            <h3>أكتبُ الواقع، وأعبرُ عن الوجدان</h3>
+          </div>
+
+          <div class="about-grid">
+            <article class="card">
+              <p>
+                أنا محمد صادق درامي، شاعر وكاتب أتناول في كتاباتي الدين، السياسة،
+                والمجتمع، وأحمل في قلبي ذاكرة المكان والرحلة، ومنذ الصغر كنت أراقب
+                العالم من زاوية الإنسان: ما يشتد، ما يضعف، ما يحنّ، وما يصرخ.
+              </p>
+            </article>
+
+            <article class="card accent-card">
+              <p>
+                أكتب الشعر والمقالات والنصوص الفكرية من منطلق التجربة والوعي، وأبحث
+                في اللغة عن نقطة الالتقاء بين الروح والواقع، بين الذاكرة والمشهد، وبين
+                الاعتقاد والحقائق التي لا يراها كثيرون.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="works" class="section section-alt">
+        <div class="container">
+          <div class="section-heading">
+            <p class="kicker">أعمالي</p>
+            <h3>مشروعات أدبية تحمل جرح الذاكرة</h3>
+          </div>
+
+          <div class="works-grid">
+            <article class="work-card">
+              <span class="tag">نظم شعري</span>
+              <h4>سورة البقرة في بحر الرجز</h4>
+              <p>
+                مشروع أدبي كبير نظم فيه جزءٌ واسعٌ من سورة البقرة في بحر الرجز، في نحوٍ
+                قريب من الألف بيت، يلتقي فيه التلاوة بالوعي، واللغة بالرحلة.
+              </p>
+            </article>
+
+            <article class="work-card">
+              <span class="tag">قصائد</span>
+              <h4>لتر كندا ومسقط رأسي</h4>
+              <p>
+                نصوص شعرية تعكس مسقط رأسي في لاتر، كندا، وتستذكر السنوات الطويلة التي
+                قضاها في المدن الأمريكية، وما استخلصته من سفرٍ وحنينٍ وتجربةٍ إنسانية.
+              </p>
+            </article>
+
+            <article class="work-card">
+              <span class="tag">مقالات</span>
+              <h4>عبر الدين والسياسة والمجتمع</h4>
+              <p>
+                مقالات وفكريات تدور حول الضمير، الهوية، السلطة، والسؤال عن معنى الإنسان
+                في زمن التناقضات والاضطرابات.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="poetry" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="kicker">الشعر</p>
+            <h3>مختارات من أعمالي الشعرية</h3>
+          </div>
+
+          <div class="poetry-grid">
+            <a class="poetry-card" href="ارجوزة محمد صادق">
+              <span class="poetry-tag">قصيدة</span>
+              <h4>ارجوزة محمد صادق</h4>
+              <p>عمل شعري عميق في التلاوة واللغة والهوية.</p>
+            </a>
+
+            <a class="poetry-card" href="العلم">
+              <span class="poetry-tag">قصيدة</span>
+              <h4>العلم</h4>
+              <p>رحلة في الوعي والمعنى، بين الحكاية والبحث.</p>
+            </a>
+
+            <a class="poetry-card" href="الولي">
+              <span class="poetry-tag">قصيدة</span>
+              <h4>الولي</h4>
+              <p>أثر من تجليات اللّه، والرحمة، والقدرة.</p>
+            </a>
+
+            <a class="poetry-card" href="والصبر ضياء">
+              <span class="poetry-tag">قصيدة</span>
+              <h4>والصبر ضياء</h4>
+              <p>نص عن الصبر، العطاء، والقدر، والوضوح.</p>
+            </a>
+
+            <a class="poetry-card" href="القرآن حجة لك أو عليك">
+              <span class="poetry-tag">قصيدة</span>
+              <h4>القرآن حجة لك أو عليك</h4>
+              <p>تأملات في النص، الفهم، والاختبار الإيماني.</p>
+            </a>
+
+            <a class="poetry-card" href="محمد صادق درامي">
+              <span class="poetry-tag">قصيدة</span>
+              <h4>محمد صادق درامي</h4>
+              <p>سيرة الذات في صورها الشعرية والمعنوية.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="themes" class="section section-alt">
+        <div class="container">
+          <div class="section-heading">
+            <p class="kicker">المواضيع</p>
+            <h3>ما أكتب عنه</h3>
+          </div>
+
+          <div class="themes-grid">
+            <article class="theme-card">
+              <div class="icon">01</div>
+              <h4>الدين</h4>
+              <p>فهم الروح، الضمير، والقيم، وتجاوز السطح إلى معنى التجربة الدينية.</p>
+            </article>
+
+            <article class="theme-card">
+              <div class="icon">02</div>
+              <h4>السياسة</h4>
+              <p>قراءة الواقع، السلطة، والأزمات، من زاوية إنسانية ونقدية.</p>
+            </article>
+
+            <article class="theme-card">
+              <div class="icon">03</div>
+              <h4>المجتمع</h4>
+              <p>الهوية، الوعى، المعاناة، والبحث عن النبض البشري في أصعب المحطات.</p>
+            </article>
+
+            <article class="theme-card">
+              <div class="icon">04</div>
+              <h4>الرحلة</h4>
+              <p>الذهاب والعودة، المسافة والحنين، والذاكرة التي تصنع الإنسان.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="articles" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="kicker">المقالات</p>
+            <h3>مقاطع مختارة من الفكر واللغة</h3>
+          </div>
+
+          <div class="articles-list">
+            <article class="article-item">
+              <span class="article-date">2025</span>
+              <div>
+                <h4>الضمير في زمن الصمت</h4>
+                <p>مقالة عن دور الضمير في مواجهة التواكل والواقع المكسور.</p>
+              </div>
+            </article>
+
+            <article class="article-item">
+              <span class="article-date">2025</span>
+              <div>
+                <h4>بين البحر والمدينة</h4>
+                <p>تأمل في المسافة، واستعادة ��لهوية، وحنين الأرض في زمن الامتحان.</p>
+              </div>
+            </article>
+
+            <article class="article-item">
+              <span class="article-date">2025</span>
+              <div>
+                <h4>عندما تلتقي السياسة بالروح</h4>
+                <p>سؤالٌ عن المعنى في زمن تتداخل فيه السلطة، الحقيقة، والذاكرة.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section cta-section">
+        <div class="container cta-box">
+          <div>
+            <p class="kicker">تواصل</p>
+            <h3>للتواصل الأدبي أو الفكري أو الثقافي</h3>
+          </div>
+          <div class="contact-links">
+            <a href="mailto:sadiqdarami@gmail.com">sadiqdarami@gmail.com</a>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://x.com" target="_blank" rel="noreferrer">X</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 محمد صادق درامي — جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+  </body>
+</html>
